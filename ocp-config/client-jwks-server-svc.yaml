@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: client-jwks-server
+  namespace: fapi
+  labels:
+    app: client-jwks-server
+    app.kubernetes.io/component: client-jwks-server
+    app.kubernetes.io/instance: client-jwks-server
+    app.kubernetes.io/part-of: client-jwks-server
+spec:
+  selector:
+    app: client-jwks-server
+    deploymentconfig: client-jwks-server
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000

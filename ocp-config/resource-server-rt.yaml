@@ -1,0 +1,11 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: resource-server
+  namespace: fapi
+spec:
+  to:
+    kind: Service
+    name: resource-server
+  port:
+    targetPort: 3000

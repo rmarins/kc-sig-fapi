@@ -1,0 +1,11 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: client-jwks-server
+  namespace: fapi
+spec:
+  to:
+    kind: Service
+    name: client-jwks-server
+  port:
+    targetPort: 3000

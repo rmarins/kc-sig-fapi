@@ -1,0 +1,19 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: image-registry
+  namespace: openshift-image-registry
+  labels:
+    docker-registry: default
+spec:
+  host: >-
+    image-registry-openshift-image-registry.apps.cluster-c767.dynamic.opentlc.com
+  to:
+    kind: Service
+    name: image-registry
+    weight: 100
+  port:
+    targetPort: 5000-tcp
+  tls:
+    termination: reencrypt
+  wildcardPolicy: None

@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: resource-server
+  namespace: fapi
+  labels:
+    app: resource-server
+    app.kubernetes.io/component: resource-server
+    app.kubernetes.io/instance: resource-server
+    app.kubernetes.io/part-of: resource-server
+spec:
+  selector:
+    app: resource-server
+    deploymentconfig: resource-server
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000

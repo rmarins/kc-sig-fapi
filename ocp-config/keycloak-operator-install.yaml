@@ -1,0 +1,17 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: InstallPlan
+metadata:
+  name: keycloak-install
+  namespace: fapi
+  ownerReferences:
+    - apiVersion: operators.coreos.com/v1alpha1
+      blockOwnerDeletion: false
+      controller: false
+      kind: Subscription
+      name: keycloak-operator
+spec:
+  approval: Manual
+  approved: true
+  clusterServiceVersionNames:
+    - keycloak-operator.v12.0.3
+  generation: 1
